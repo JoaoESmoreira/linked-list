@@ -23,6 +23,9 @@ typedef struct list {
 int main(void) {
     int option;
 
+    //create a list
+    list l = {.in_list = NULL};
+
     do {
         menu();
         while (input_option(&option) != true) 
@@ -31,11 +34,11 @@ int main(void) {
         printf("O numero intruduzido foi: %d.\n", option);
 
         if (option == 1) {
-            // add contactos
+            // add number phone
 
 
         } else if (option == 2) {
-            // ver lista
+            // see all lista
 
 
         }
@@ -53,14 +56,14 @@ bool input_option(int *op) {
 
     if (res < 1 || (res == 2 && aux != '\n') ) {
         scanf("%*[^\n]%*c", op);
-        printf("Numeros invalidos\n");
+        printf("Invalid numbers\n");
         return false;
     }
     return true;
 }
 
 void menu() {
-    printf("Intruduza: 0 - para sair\n"
-           "Intruduza: 1 - para adicionar um contacto\n"
-           "Intruduza: 2 - para consultar a lista\n");
+    printf("Insert: 0 - to get out\n"
+           "Insert: 1 - to add a number phone\n"
+           "Insert: 2 - to check all list\n");
 }
