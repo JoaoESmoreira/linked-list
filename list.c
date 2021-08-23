@@ -1,8 +1,23 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define MAX 50
+
 bool input_option(int *);
 void menu();
+
+
+typedef struct no {
+    char name[MAX];
+    int phone_number;
+
+    struct no* next;
+    struct no* prev;
+} no;
+
+typedef struct list {
+    no in_list;
+} list;
 
 
 int main(void) {
