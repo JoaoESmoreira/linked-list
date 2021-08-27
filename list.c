@@ -12,7 +12,6 @@ typedef struct no {
     int phone_number;
 
     struct no* next;
-    struct no* prev;
 } no;
 
 typedef struct list {
