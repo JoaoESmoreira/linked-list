@@ -20,8 +20,9 @@ typedef struct list {
 } list;
 
 
-bool add_number(list *l, const char *name, const int num);
-bool input_number(long int *op);
+bool add_number(list *, const char *, const int );
+bool input_number(long int *);
+void free_memory(list *);
 
 
 int main(void) {
@@ -64,6 +65,8 @@ int main(void) {
         // Do a else: printf("Invalid number\n");
 
     } while (option != 0);
+
+    free_memory(&l);
 
     return 0;
 }
@@ -136,4 +139,23 @@ bool add_number(list *l, const char *name, const int num) {
     }
 
     return add_number_rec(l->in_list, name, num);
+}
+
+static void free_memory_rec(head *ptr) {
+    if(ptr != NULL) {
+        head *aux = ptr->next;
+        free(ptr);
+        
+        return free_memory_rec(aux);
+    }
+    return;
+}
+
+void free_memory(list *l) {
+    if (l->in_list == NULL) return;
+
+    head *aux = l->in_list;
+    l->in_list = NULL;
+    
+    return free_memory_rec(aux);
 }
