@@ -152,10 +152,12 @@ static void free_memory_rec(head *ptr) {
 }
 
 void free_memory(list *l) {
-    if (l->in_list == NULL) return;
+    if (l->in_list != NULL) {
 
     head *aux = l->in_list;
     l->in_list = NULL;
     
     return free_memory_rec(aux);
+    }
+    return;
 }
