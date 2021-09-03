@@ -26,6 +26,7 @@ bool add_number(list *, const char *, const int );
 
 void menu();
 void free_memory(list *);
+void print_all_list(list *);
 
 
 #endif

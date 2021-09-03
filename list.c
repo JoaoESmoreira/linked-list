@@ -34,7 +34,7 @@ int main(void) {
 
         } else if (option == 2) {
             // see all list
-
+            print_all_list(&l);
 
         }
 

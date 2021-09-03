@@ -90,3 +90,9 @@ void free_memory(list *l) {
     }
     return;
 }
+
+void print_all_list(list *l) {
+    for (head *ptr = l->in_list; ptr->next != NULL; ptr = ptr->next) 
+        printf("%20s : %10ld", ptr->name, ptr->phone_number);
+
+}
