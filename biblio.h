@@ -10,7 +10,7 @@
 
 typedef struct head {
     char name[MAX];
-    int phone_number;
+    long int phone_number;
 
     struct head* next;
 } head;

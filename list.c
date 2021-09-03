@@ -12,9 +12,9 @@ int main(void) {
         while (input_option(&option) != true) 
             menu();
 
-        printf("O numero intruduzido foi: %d.\n", option);
-
-        if (option == 1) {
+        if (option == 0) {
+            continue;
+        } else if (option == 1) {
             // add number phone
             char name[MAX];
             long int number;
@@ -36,9 +36,9 @@ int main(void) {
             // see all list
             print_all_list(&l);
 
+        } else {
+            printf("Invalid number\n");
         }
-
-        // Do a else: printf("Invalid number\n");
 
     } while (option != 0);
 
